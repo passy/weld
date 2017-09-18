@@ -15,9 +15,11 @@ tokio-core = "0.1.4"
 
 [dependencies.webrender]
 git = "https://github.com/servo/webrender"
+rev = "f6d81d9349823cf89e2ccb1d3b2166918818db1b"
 
 [dependencies.yoga]
-git = "https://github.com/bschwind/yoga-rs"
+git = "https://github.com/passy/yoga-rs-1"
+rev = "3e524d7f0fbc64753ec93bc459ac4072c0e6fa0b"
 
 [dev-dependencies]
 pretty_env_logger = "0.1"
