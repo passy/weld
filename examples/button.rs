@@ -1,3 +1,5 @@
+#[macro_use]
+extern crate yoga;
 extern crate weld;
 extern crate pretty_env_logger;
 extern crate webrender;
@@ -57,20 +59,20 @@ struct MyAppState {
 impl State for MyAppState {
     fn build(&self) -> Component {
         container()
-            .styles(vec![
-                Width(100.percent()),
-                Height(100.percent()),
+            .styles(make_styles!(
+                Width(100 %),
+                Height(100 %),
                 FlexDirection(FlexDirection::Row),
-                Padding(25.point()),
+                Padding(25 pt),
                 AlignItems(FlexStart),
                 FlexWrap(Wrap::Wrap)
-            ])
+            ))
             .child(
                 button(&self.button_color)
-                    .styles(vec![
+                    .styles(make_styles!(
                         Width(self.button_width.point()),
-                        Height(32.point()),
-                    ])
+                        Height(32 pt)
+                    ))
                     .name("button")
                     .on(Box::new(|state: Self, event| {
                         match *event {
